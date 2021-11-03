@@ -23,7 +23,7 @@ python tools/create_data.py nuscenes_data_prep --root_path=NUSCENES_TRAINVAL_DAT
 python -m torch.distributed.launch --nproc_per_node=8 ./tools/train.py examples/point_pillars/configs/nusc_all_pp_centernet_tracking.py --work_dir SAVE_DIR
 ```
 
-### Validation
+### Test
 We provide our trained model on nuScenes. You may download it from [Google Drive](https://drive.google.com/file/d/1TYndy6o1RjGmCtpF97foJEeWjWgLaXjC/view?usp=sharing).     
 Note: Currently we only support single GPU for inference.
 ```
