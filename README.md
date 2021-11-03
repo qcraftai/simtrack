@@ -5,7 +5,7 @@
 
 [Chenxu Luo](https://chenxuluo.github.io/), [Xiaodong Yang](https://xiaodongyang.org/), [Alan Yuille](https://www.cs.jhu.edu/~ayuille/) <br>
 Exploring Simple 3D Multi-Object Tracking for Autonomous Driving, ICCV 2021<br>
-[[Paper]](https://arxiv.org/pdf/2108.10312.pdf) [[Poster]](poster.pdf) [[YouTube]]()
+[[Paper]](https://arxiv.org/pdf/2108.10312.pdf) [[Poster]](poster.pdf) [[YouTube]](https://www.youtube.com/watch?v=awK1O-wf_74)
 
 ## Getting Started
 ### Installation
