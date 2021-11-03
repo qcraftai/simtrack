@@ -25,7 +25,7 @@ python -m torch.distributed.launch --nproc_per_node=8 ./tools/train.py examples/
 
 ### Test
 We provide our trained model on nuScenes. You may download it from [Google Drive](https://drive.google.com/file/d/1TYndy6o1RjGmCtpF97foJEeWjWgLaXjC/view?usp=sharing).     
-Note: Currently we only support single GPU for inference.
+Note: We currently only support inference with a single GPU.
 ```
 python ./tools/val_nusc_tracking.py examples/point_pillars/configs/nusc_all_pp_centernet_tracking.py --checkpoint CHECKPOINTFILE  --work_dir SAVE_DIR
 ```
