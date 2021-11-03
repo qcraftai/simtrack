@@ -1,5 +1,5 @@
 # Installation
-This part is modified from [CenterPoint](https://github.com/tianweiy/CenterPoint/blob/master/docs/INSTALL.md)
+Modified from [CenterPoint](https://github.com/tianweiy/CenterPoint/blob/master/docs/INSTALL.md)
 
 ## Requirements
 * Python 3.6+
