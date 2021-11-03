@@ -14,7 +14,7 @@ Please refer to [INSTALL](INSTALL.md) for detail.
 ### Data Preparation 
 * [nuScenes](https://www.nuscenes.org)
 ```
-python tools/create_data.py nuscenes_data_prep --root_path=NUSCENES_TRAINVAL_DATASET_ROOT --version="v1.0-trainval" --nsweeps=10
+python ./tools/create_data.py nuscenes_data_prep --root_path=NUSCENES_TRAINVAL_DATASET_ROOT --version="v1.0-trainval" --nsweeps=10
 ```
 * [Waymo Open Dataset](https://waymo.com/open/) (TODO)
 
