@@ -11,16 +11,12 @@ Exploring Simple 3D Multi-Object Tracking for Autonomous Driving, ICCV 2021<br>
 ### Installation
 * Please refer to [INSTALL](INSTALL.md) for detail.
 
-
-### Datasets
-* [nuScenes](https://www.nuscenes.org)
-* [Waymo Open Dataset](https://waymo.com/open/) (TODO)
-
 ### Data Preparation 
-For nuScenes, 
+[nuScenes](https://www.nuscenes.org)
 ```
 python tools/create_data.py nuscenes_data_prep --root_path=NUSCENES_TRAINVAL_DATASET_ROOT --version="v1.0-trainval" --nsweeps=10
 ```
+[Waymo Open Dataset](https://waymo.com/open/) (TODO)
 
 ### Training
 ```
@@ -28,7 +24,7 @@ python -m torch.distributed.launch --nproc_per_node=8 ./tools/train.py examples/
 ```
 
 ### Validation
-We provide our trained model on nuScenes. You may download it from [Google Drive](https://drive.google.com/file/d/1TYndy6o1RjGmCtpF97foJEeWjWgLaXjC/view?usp=sharing) 
+We provide our trained model on nuScenes. You may download it from [Google Drive](https://drive.google.com/file/d/1TYndy6o1RjGmCtpF97foJEeWjWgLaXjC/view?usp=sharing).     
 Note: Currently we only support single GPU for inference.
 ```
 python ./tools/val_nusc_tracking.py examples/point_pillars/configs/nusc_all_pp_centernet_tracking.py --checkpoint CHECKPOINTFILE  --work_dir SAVE_DIR
