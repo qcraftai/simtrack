@@ -26,6 +26,6 @@ cd apex
 pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 
-* For the voxel based backbone, please install [SpConv](https://github.com/traveller59/spconv)
+* For the voxel based backbone, please install [SpConv](https://github.com/traveller59/spconv).
 
-Note: Our voxel based model was trained and tested based on SpConv1.x and may not work with the latest version. We are working on this, please stay tuned. 
+Note: Our voxel based model was trained and tested based on SpConv1.x and may not work with the latest version. We are working on this to solve the conflict, please stay tuned. 
