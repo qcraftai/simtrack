@@ -1,11 +1,11 @@
 # Installation
-Modified from [CenterPoint](https://github.com/tianweiy/CenterPoint/blob/master/docs/INSTALL.md)
+Modified from [Det3D](https://github.com/poodarchu/Det3D/blob/master/INSTALLATION.md)
 
 ## Requirements
 * Python 3.6+
-* PyTorch 1.1 or higher
-* CUDA 10.0 or higher
-* CMake 3.13.2 or higher
+* PyTorch 1.1+
+* CUDA 10.0+
+* CMake 3.13.2+
 
 ## Setup
 ```
@@ -13,7 +13,7 @@ git clone https://github.com/qcraftai/simtrack.git
 cd simtrack
 pip install -r requirements.txt
 ```
-* Compile CUDA code for IOU3D_nms
+* Compile CUDA code for IOU3D_NMS
 ``` 
 cd det3d/ops/iou3d_nms
 python setup.py build_ext --inplace
