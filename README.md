@@ -9,7 +9,7 @@ Exploring Simple 3D Multi-Object Tracking for Autonomous Driving, ICCV 2021<br>
 
 ## Getting Started
 ### Installation
-Please refer to [INSTALL](INSTALL.md) for detail.
+Please refer to [INSTALL](INSTALL.md) for the detail.
 
 ### Data Preparation 
 * [nuScenes](https://www.nuscenes.org)
