@@ -205,7 +205,7 @@ class CenterHeadV2(nn.Module):
                 if double_flip:
                     meta_list = meta_list[:4*int(batch_size):4]
 
-            batch_hm = torch.sigmoid(preds_dict['hm'])
+            batch_hm = torch.sigmoid(preds_dict['hm'].clone())
 
             batch_dim = torch.exp(preds_dict['dim'])
 
@@ -322,11 +322,11 @@ class CenterHeadV2(nn.Module):
                 dtype=preds_dicts[0]['hm'].dtype,
                 device=preds_dicts[0]['hm'].device)
 
-        prev_det = kwargs.get('prev_hm', None)
+        prev_track_id = kwargs.get('prev_track_id', None)
 
-        if prev_det is not None:
+        if prev_track_id is not None:
             track_rets = []
-            prev_track_id = kwargs['prev_track_id']
+            prev_hm = kwargs['prev_hm']
             
         for task_id, preds_dict in enumerate(preds_dicts):
             new_obj = [{}]
@@ -375,16 +375,15 @@ class CenterHeadV2(nn.Module):
         
             metas.append(meta_list)
 
-            if prev_det is not None:
-                tracking_batch_hm =  (batch_hm + prev_det[task_id]) / 2.0  
-                assert prev_track_id is not None
-                tracking = self.post_processing_tracking(batch_box_preds.clone(), tracking_batch_hm.clone(), prev_track_id[task_id], test_cfg, post_center_range) 
+            if prev_track_id is not None:
+                tracking_batch_hm =  (batch_hm + prev_hm[task_id]) / 2.0  
+                tracking = self.post_processing_tracking(batch_box_preds, tracking_batch_hm, prev_track_id[task_id], test_cfg, post_center_range) 
                 
                 for bit in range(len(tracking)):
                     cond = tracking[bit]['tracking_id'] == -1 # new obj
                     for tk in tracking[0].keys():
                         if tk != 'tracking_id':
-                            new_obj[bit][tk] = tracking[bit][tk][cond].clone()
+                            new_obj[bit][tk] = tracking[bit][tk][cond]
                 
                 for bit in range(len(tracking)):
                     cond = tracking[bit]['tracking_id'] != -1
@@ -417,7 +416,7 @@ class CenterHeadV2(nn.Module):
             ret['metadata'] = metas[0][i]
             ret_list.append(ret)
 
-        if prev_det is not None:
+        if prev_track_id is not None:
             track_rets_list = []
             num_tracks = len(track_rets[0])
             for i in range(num_tracks):
