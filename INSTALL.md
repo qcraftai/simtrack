@@ -29,3 +29,6 @@ pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp
 * For the voxel based backbone, please install [SpConv](https://github.com/traveller59/spconv).
 
 Note: Our voxel based model was trained and tested based on SpConv1.x and may not work with the latest version. We are working on this to solve the conflict, please stay tuned. 
+
+* Download detection [pretrained model](https://mitprod-my.sharepoint.com/personal/tianweiy_mit_edu/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Ftianweiy%5Fmit%5Fedu%2FDocuments%2FCenterPoint%2FMVP%2Fnusc%5Fcenterpoint%5Fpp%5Ffix%5Fbn%5Fz%5Fscale%2Fepoch%5F20%2Epth)
+
